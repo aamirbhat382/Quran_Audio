@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import ReactAudioPlayer from 'react-audio-player';
 import NavBar from './NavBar'
 
+
 const Surah = ()=> {
 const location = useLocation();
 const [data, setData] = useState(null);

@@ -135,4 +135,11 @@ a{
     right: 24px;
     z-index: 100;
 }
-
+.SurhaContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding-top: 21px;
+    direction: rtl;
+}
