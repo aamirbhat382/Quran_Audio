@@ -17,13 +17,16 @@ function NavBar({children}) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/index.html">Home</Link>
+                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="./prayer.html">Prayer Times</Link>
+                   <li className="nav-item">
+                        <Link className="nav-link" to="/suraha/tajweed">Tajweed</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="./calendar.html">Calendar</Link>
+                        <Link className="nav-link" to="/">Prayer Times</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/clander">Calendar</Link>
                     </li>
                     
                     <li className="nav-item">
