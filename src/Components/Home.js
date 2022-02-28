@@ -42,9 +42,10 @@ const surhaList =()=>{
 	return (
 		<>
 			{loading && 
-				<div className="spinner-border" role="status">
-					  <span className="visually-hidden">Loading...</span>
-				</div>
+				<div className="d-flex align-items-center">
+                  <strong>Loading...</strong>
+                  <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+                </div>
 			}
 			{error && (
 	       	<div className="alert alert-danger" role="alert">

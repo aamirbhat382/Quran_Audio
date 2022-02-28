@@ -23,14 +23,14 @@ function NavBar({children}) {
                         <Link className="nav-link" to="/suraha/tajweed">Tajweed</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Prayer Times</Link>
+                        <Link className="nav-link" to="/prayer">Prayer Times</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/clander">Calendar</Link>
                     </li>
                     
                     <li className="nav-item">
-                        <Link className="nav-link " to="./about.html">About</Link>
+                        <Link className="nav-link " to="/about">About</Link>
                     </li>
 
                 </ul>
