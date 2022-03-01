@@ -9,6 +9,7 @@ import Surah from './Components/Surha'
 import TajweedSurha from './Components/TajweedSurha'
 import Clander from './Components/Clander'
 import PrayerTimes from './Components/PrayerTimes'
+import Hadith from  './Components/Hadith'
 
 
 function AllRoutes() {
@@ -20,6 +21,7 @@ function AllRoutes() {
         <Route path="suraha/tajweed" element={<TajweedSurha/>}/>
         <Route path="/prayer" element={<PrayerTimes/>}/>
         <Route path="clander" element={<Clander/>}/>
+        <Route path="hadith" element={<Hadith/>}/>
       </Routes>
     </Router>
   );

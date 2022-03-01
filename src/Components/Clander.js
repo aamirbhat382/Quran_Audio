@@ -12,6 +12,14 @@ const [error, setError] = useState(null);
 
 let year = new Date().getFullYear();
 let month = new Date().getMonth()+1
+let TodaysDate = ()=>{
+  let _date = new Date().getDate().toString()
+  if(_date < 10){
+    return '0'+_date
+  }else{return _date}
+  
+}
+
 const URL = `https://api.aladhan.com/v1/gToHCalendar/${month}/${year}`
 const loadData = (url)=>{
     fetch(url)
@@ -24,7 +32,7 @@ const loadData = (url)=>{
         return response.json();
       })
       .then((data) => {
-        console.log(data.data)
+        // console.log(data.data)
         
         setData(data.data);
         setError(null);
@@ -80,7 +88,7 @@ const WeekDayStart =(data)=>{
 }
 const Month =(data)=>{
    return data.map(element=>{
-         if(element.gregorian.day === new Date().getDate().toString()){
+         if(element.gregorian.day === TodaysDate()){
             return(
             <strong className="cal-month-name">{element.gregorian.month.en} | {element.hijri.month.en}</strong>)
            
@@ -121,7 +129,7 @@ const Style = {
         
         {data && data.map((element=>{
           return(
-            <button class="btn cal-btn " style={ element.gregorian.day === new Date().getDate().toString() ? { color:'#e1e1ed',background:"#48974e"} : {}} >{element.gregorian.day} <br/>{element.hijri.day}</button>
+            <button class="btn cal-btn " style={ element.gregorian.day === TodaysDate() ? { color:'#e1e1ed',background:"#48974e"} : {}} >{element.gregorian.day} <br/>{element.hijri.day}</button>
           )
         }))
           
