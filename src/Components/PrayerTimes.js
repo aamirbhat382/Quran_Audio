@@ -41,6 +41,7 @@ const loadData = (url)=>{
 }
 
 useEffect(() => {
+    if(window.navigator.geolocation){
   window.navigator.geolocation.getCurrentPosition(showPosition);
 
         function showPosition(position) {
@@ -49,6 +50,7 @@ useEffect(() => {
                 let URL = `https://api.aladhan.com/timings/${todaysDate}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=1`
                 loadData(URL)
         }
+    }
   }, []);
 function ConvertTime (time) {
     
