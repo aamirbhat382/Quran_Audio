@@ -1,0 +1,6 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.herokuapp.quran_audio_app.twa",
+                 "sha256_cert_fingerprints": ["21:30:05:55:6A:30:7D:3B:68:4E:83:20:58:65:11:9B:53:E0:19:52:CB:9D:E1:08:D6:0C:A3:0F:75:C7:A2:51"] }
+  }
+]
