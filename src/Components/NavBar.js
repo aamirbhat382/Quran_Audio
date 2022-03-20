@@ -36,22 +36,22 @@ function NavBar({children}) {
                 </ul>
                 <ul className="navbar-nav flex-row flex-wrap ms-md-auto ">
                     <li className=" nav-item">
-                        <Link className="nav-link  " target="blank" to="https://github.com/aamirbhat382"><i className="bi bi-github me-1 "></i></Link>
+                        <a className="nav-link  " target="blank" href="https://github.com/aamirbhat382"><i className="bi bi-github me-1 "></i></a>
                      </li>
                     <li className=" nav-item">
-                        <Link className="nav-link " target="blank" to="https://www.facebook.com/aamirbhat382/"><i className="bi bi-facebook me-1 "></i></Link>
+                        <a className="nav-link " target="blank" href="https://www.facebook.com/aamirbhat382/"><i className="bi bi-facebook me-1 "></i></a>
                      </li>
                     <li className=" nav-item">
-                        <Link className="nav-link " target="blank" to="https://www.instagram.com/aamirbhat382/"><i className="bi bi-instagram me-1 "></i></Link>
+                        <a className="nav-link " target="blank" href="https://www.instagram.com/aamirbhat382/"><i className="bi bi-instagram me-1 "></i></a>
                      </li>
                     <li className=" nav-item">
-                        <Link className="nav-link " target="blank" to="https://twitter.com/aamirbhat382"><i className="bi bi-twitter me-1"></i></Link>
+                        <a className="nav-link " target="blank" href="https://twitter.com/aamirbhat382"><i className="bi bi-twitter me-1"></i></a>
                     </li>
 
                 </ul>
                 <form className="d-flex">
-                    <Link className="btn btn-outline-success" target="blank" to="https://github.com/aamirbhat382/Quran-audio-api"><i className="bi bi-github"></i> Source
-                        Code</Link>
+                    <a className="btn btn-outline-success" target="blank" href="https://github.com/aamirbhat382/Quran-audio-api"><i className="bi bi-github"></i> Source
+                        Code</a>
                 </form>
             </div>
         </div>

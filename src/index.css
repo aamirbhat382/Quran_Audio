@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -189,4 +190,11 @@ a{
 .form-control-dark {
   background-color: rgba(255, 255, 255, .05);
   border-color: rgba(255, 255, 255, .15);
+}
+.spinner-center{
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  top: 50%;
+  bottom: 50%;
 }

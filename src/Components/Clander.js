@@ -57,27 +57,27 @@ const WeekDayStart =(data)=>{
   }
   else if(data[0].gregorian.weekday.en === "Monday")
     for(let i =0 ; i<1;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
     else if(data[0].gregorian.weekday.en === "Tuesday")
     for(let i =0 ; i<2;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
     else if(data[0].gregorian.weekday.en === "Wednesday")
     for(let i =0 ; i<3;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
      else if(data[0].gregorian.weekday.en === "Thursday")
     for(let i =0 ; i<4;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
     else if(data[0].gregorian.weekday.en === "Friday")
     for(let i =0 ; i<5;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
     else if(data[0].gregorian.weekday.en === "Saturday")
     for(let i =0 ; i<6;i++){
-       html += `<button class="btn cal-btn" type="button"></button>`
+       html += `<button className="btn cal-btn" type="button"></button>`
     }
     
   
@@ -104,32 +104,37 @@ const Style = {
   return (
     <NavBar>
     <div className="container my-3 p-2 shadow rounded-3">
-<div class="d-grid gap-1">
-    <div class="cal">
-      <div class="cal-month">
-        <button class="btn cal-btn" type="button">
-          <svg class="bi" width="16" height="16"><use href="#arrow-left-short"></use></svg>
+<div className="d-grid gap-1">
+    <div className="cal">
+      <div className="cal-month">
+        <button className="btn cal-btn" type="button">
+          <svg className="bi" width="16" height="16"><use href="#arrow-left-short"></use></svg>
         </button>
-        <strong class="cal-month-name">{data && Month(data)}</strong>
-        <button class="btn cal-btn" type="button">
-          <svg class="bi" width="16" height="16"><use href="#arrow-right-short"></use></svg>
+        <strong className="cal-month-name">{data && Month(data)}</strong>
+        <button className="btn cal-btn" type="button">
+          <svg className="bi" width="16" height="16"><use href="#arrow-right-short"></use></svg>
         </button>
       </div>
-      <div class="cal-weekdays text-muted">
-        <div class="cal-weekday">Sun</div>
-        <div class="cal-weekday">Mon</div>
-        <div class="cal-weekday">Tue</div>
-        <div class="cal-weekday">Wed</div>
-        <div class="cal-weekday">Thu</div>
-        <div class="cal-weekday">Fri</div>
-        <div class="cal-weekday">Sat</div>
+      <div className="cal-weekdays text-muted">
+        <div className="cal-weekday">Sun</div>
+        <div className="cal-weekday">Mon</div>
+        <div className="cal-weekday">Tue</div>
+        <div className="cal-weekday">Wed</div>
+        <div className="cal-weekday">Thu</div>
+        <div className="cal-weekday">Fri</div>
+        <div className="cal-weekday">Sat</div>
       </div>
-      <div class="cal-days">
+      <div className="cal-days">
+      {loading && (
+          <div className="spinner-border spinner-center" role="status">
+		  <span className="visually-hidden">Loading...</span>
+		</div>
+        )}
       {data && parse(WeekDayStart(data))}
         
         {data && data.map((element=>{
           return(
-            <button class="btn cal-btn " style={ element.gregorian.day === TodaysDate() ? { color:'#e1e1ed',background:"#48974e"} : {}} >{element.gregorian.day} <br/>{element.hijri.day}</button>
+            <button className="btn cal-btn " style={ element.gregorian.day === TodaysDate() ? { color:'#e1e1ed',background:"#48974e"} : {}} >{element.gregorian.day} <br/>{element.hijri.day}</button>
           )
         }))
           
