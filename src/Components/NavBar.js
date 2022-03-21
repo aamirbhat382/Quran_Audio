@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 function NavBar({children}) {
   return (
     <>
-    <nav className="navbar navbar-expand-md navbar-dark  bg-dark ">
+    <nav className="navbar navbar-expand-md  ">
         <div className="container-fluid">
             <Link className="navbar-brand" to="#">Quran Audio </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

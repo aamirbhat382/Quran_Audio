@@ -55,7 +55,7 @@ const surhaList =()=>{
 		        {data &&
 		        	data.map((element) => {
 		        		return(
-					        <button onClick={() => handleOnClick(element.number)} key={element.number} id={element.number} className=" surah list-group-item list-group-item-action bg-light text-dark ">
+					        <button onClick={() => handleOnClick(element.number)} key={element.number} id={element.number} className=" surah list-group-item list-group-item-action rounded ">
 					        <div className="d-flex w-100 justify-content-between">
 					          
 					          <small className="text-muted"> <span className="badge bg-success badge-pill ">{element.number}</span> Number Of Ayahs {element.numberOfAyahs}</small>

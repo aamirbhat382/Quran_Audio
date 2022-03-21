@@ -12,12 +12,45 @@ body {
 html{
     scroll-behavior: smooth;
   }
+  main{
+    background: #151a33;
+  }
+  .navbar{
+    background-color: #060b1b;
+  
+  }
+  .navbar-brand {
+    color:#7081b9;
+    
+  }
+  .nav-link{
+    color:#7081b9;
+    font-weight:bold;
+  }
+  .nav-link:hover{
+    color:#cdd2e0;
+    
+  }
   .one-Surah{
       height: 85vh;
       overflow-y: auto;
       scroll-behavior: smooth;
       
       /* margin-top: 8rem; */
+  }
+  .surah{
+    padding: 16px 11px;
+    /* background: #f9fbfa; */
+    transition: 0.3s;
+    background-color: #060b1b;
+    color: #e9eaf0;
+  }
+
+  .surah:hover{
+    background-color: #060b1b;
+    color: #e9eaf0;
+    box-shadow: 5px 3px 7px 2px #759575;
+    margin-bottom: 9px;
   }
 
  
