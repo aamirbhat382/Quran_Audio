@@ -15,6 +15,19 @@ html{
   main{
     background: #151a33;
   }
+  .sidebar{
+    position: absolute;
+    width: 330px;
+    top: 0px;
+  }
+  .offcanvas-end-left{
+    top: 0;
+    left: 0;
+    width: 330px;
+    border-left: 1px solid rgba(0,0,0,.2);
+    transform: translateX(-100%);
+  }
+
   .navbar{
     background-color: #060b1b;
   

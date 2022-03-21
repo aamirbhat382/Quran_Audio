@@ -10,12 +10,15 @@ import TajweedSurha from './Components/TajweedSurha'
 import Clander from './Components/Clander'
 import PrayerTimes from './Components/PrayerTimes'
 import Hadith from  './Components/Hadith'
+import Test from "./Components/Test";
+
 
 
 function AllRoutes() {
   return (
     <Router>
       <Routes>
+      <Route path="/test" element={<Test/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/suraha" element={<Surah/>}/>
         <Route path="suraha/tajweed" element={<TajweedSurha/>}/>
