@@ -1,98 +1,92 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from './logo.svg'
+import { Link, NavLink } from "react-router-dom";
+import logo from "./logo.svg";
 
 function Test() {
+  const currentPathName = window.location.pathname.slice(1);
   return (
     <>
+      {/* NavBar Start */}
       <nav className="navbar navbar-expand-md  ">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="#">
-            Quran Audio{" "}
-          </Link>
           <a
-            class="nav-link p-0"
+            className="nav-link p-0"
             data-bs-toggle="offcanvas"
             href="/#offcanvasMenu"
             role="button"
             aria-controls="offcanvasMenu"
           >
             <i
-              class="bi bi-text-right rtl-flip fs-2"
+              className="bi bi-text-left rtl-flip fs-2"
               data-bs-target="#offcanvasMenu"
             >
               {" "}
             </i>
           </a>
+          <Link className="navbar-brand text-capitalize" to="#">
+            {currentPathName}
+          </Link>
         </div>
       </nav>
+      {/* NavBar End */}
+      {/* Sidebar */}
       <div
-        class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar offcanvas offcanvas-end-left"
+        className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar offcanvas offcanvas-end-left"
         id="offcanvasMenu"
         style={{ visibility: "hidden" }}
       >
-        <div class="offcanvas-header justify-content-end">
+        <div className="offcanvas-header justify-content-end">
           <button
             type="button"
-            class="btn-close text-reset"
+            className="btn-close text-reset"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           ></button>
         </div>
         <a
           href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          className="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
         >
-         <img src={logo} className="App-logo" alt="logo" />  
+          <img src={logo} className="App-logo" alt="logo" />
         </a>
         <hr />
-        <ul class="nav nav-pills flex-column mb-auto">
-          <li class="nav-item">
-            <a href="/" class="nav-link active" aria-current="page">
-              <svg class="bi me-2" width="16" height="16">
-                <use href="/"></use>
-              </svg>
+        <ul className="nav nav-pills flex-column mb-auto">
+          <li className="nav-item">
+            <NavLink to="/" className="nav-link " activeClassName="active" aria-current="page">
+            <i class="bi bi-house me-2"></i>
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a href="/" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16">
-                <use href="/"></use>
-              </svg>
-              Dashboard
-            </a>
+          <NavLink to="/suraha/tajweed" className="nav-link " activeClassName="active" aria-current="page">
+          <i class="bi bi-book me-2"></i>
+              Tajweed
+            </NavLink>
           </li>
-          <li>
-            <a href="/" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16">
-                <use href="/"></use>
-              </svg>
-              Orders
-            </a>
+          <li className="nav-item">
+            <NavLink to="/prayer" className="nav-link " activeClassName="active" aria-current="page">
+            <i class="bi bi-clock me-2"></i>
+              Prayer
+            </NavLink>
           </li>
-          <li>
-            <a href="/" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16">
-                <use href="/"></use>
-              </svg>
-              Products
-            </a>
+          <li className="nav-item">
+            <NavLink to="/clander" className="nav-link " activeClassName="active" aria-current="page">
+            <i class="bi bi-calendar-day me-2"></i>
+              Calendar
+            </NavLink>
           </li>
-          <li>
-            <a href="/" class="nav-link link-dark">
-              <svg class="bi me-2" width="16" height="16">
-                <use href="/"></use>
-              </svg>
-              Customers
-            </a>
+          <li className="nav-item">
+            <NavLink to="/about" className="nav-link " activeClassName="active" aria-current="page">
+            <i class="bi bi-file-earmark-person me-2"></i>
+              About
+            </NavLink>
           </li>
         </ul>
         <hr />
-        <div class="dropdown">
+        <div className="dropdown">
           <a
             href="/"
-            class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+            className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
             id="dropdownUser2"
             data-bs-toggle="dropdown"
             aria-expanded="false"
@@ -102,34 +96,34 @@ function Test() {
               alt=""
               width="32"
               height="32"
-              class="rounded-circle me-2"
+              className="rounded-circle me-2"
             />
-            <strong>mdo</strong>
+            <strong>Aamir Hussain</strong>
           </a>
           <ul
-            class="dropdown-menu text-small shadow"
+            className="dropdown-menu text-small shadow"
             aria-labelledby="dropdownUser2"
           >
             <li>
-              <a class="dropdown-item" href="/">
+              <a className="dropdown-item" href="/">
                 New project...
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="/">
+              <a className="dropdown-item" href="/">
                 Settings
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="/">
+              <a className="dropdown-item" href="/">
                 Profile
               </a>
             </li>
             <li>
-              <hr class="dropdown-divider" />
+              <hr className="dropdown-divider" />
             </li>
             <li>
-              <a class="dropdown-item" href="/">
+              <a className="dropdown-item" href="/">
                 Sign out
               </a>
             </li>
