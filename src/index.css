@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  padding: 0px;
 }
 
 
@@ -20,6 +22,15 @@ html{
     width: 330px;
     top: 0px;
   }
+  .App-logo{
+    width: 50%;
+  }
+  .bi {
+    vertical-align: -.125em;
+    pointer-events: none;
+    fill: currentColor;
+  }
+ 
   .offcanvas-end-left{
     top: 0;
     left: 0;
