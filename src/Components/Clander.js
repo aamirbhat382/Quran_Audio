@@ -57,7 +57,7 @@ const WeekDayStart =(data)=>{
   }
   else if(data[0].gregorian.weekday.en === "Monday")
     for(let i =0 ; i<1;i++){
-       html += `<button className="btn cal-btn" type="button"></button>`
+       html += `<button className="btn  cal-btn" type="button"></button>`
     }
     else if(data[0].gregorian.weekday.en === "Tuesday")
     for(let i =0 ; i<2;i++){
@@ -103,14 +103,15 @@ const Style = {
 };
   return (
     <NavBar>
-    <div className="container my-3 p-2 shadow rounded-3">
+      <section className='py-3'>
+    <div className="container py-3 background-dark shadow rounded-3">
 <div className="d-grid gap-1">
     <div className="cal">
       <div className="cal-month">
         <button className="btn cal-btn" type="button">
           <svg className="bi" width="16" height="16"><use href="#arrow-left-short"></use></svg>
         </button>
-        <strong className="cal-month-name">{data && Month(data)}</strong>
+        <strong className="cal-month-name text-light">{data && Month(data)}</strong>
         <button className="btn cal-btn" type="button">
           <svg className="bi" width="16" height="16"><use href="#arrow-right-short"></use></svg>
         </button>
@@ -144,6 +145,7 @@ const Style = {
     </div>
   </div>
   </div>
+  </section>
     </NavBar>
   );
 }

@@ -55,11 +55,11 @@ const SurahDatiles = ()=>{
         // console.log(element.audio)
         return(
             
-        <div className="card text-center mb-3 bg-light" key={`key_${index}`}>
+        <div className="card text-center mb-3 ayahs-card " key={`key_${index}`}>
             <div className="card-header">
-            <p  id={`ayahsNo${index}`}  className="card-title btn btn-outline-secondary" >{index + 1}</p> 
+            <p  id={`ayahsNo${index}`}  className="card-title text-success " >{index + 1}</p> 
             </div>
-            <div className="card-body bg-light" id={`ayah${index + 1}`}>
+            <div className="card-body card-body-bg" id={`ayah${index + 1}`}>
             <h5 className="card-title Quran-ayah " id={`text-${index}`}>{element.text}</h5>
             <p className="card-title Quran-ayah " >{data[0].en_translation.ayahs[index].text}</p>
             <p className="card-title Quran-ayah " >{data[0].ur_translation.ayahs[index].text}</p>
@@ -91,7 +91,7 @@ if( document.getElementsByClassName('ayahs').length>0){
 
         player.addEventListener('ended', () => {
             
-            document.getElementById(`text-${i}`).style.color = 'black'
+            document.getElementById(`text-${i}`).style.color = '#7081b9'
 
             i++;
             
@@ -104,7 +104,7 @@ if( document.getElementsByClassName('ayahs').length>0){
                 return;
             }
             i = 0;
-            document.getElementById(`ayahsNo${i}`).click()
+            document.getElementById(`ayahsNo${i}`).scrollIntoView()
             player.src = ayahsArray[i].getAttribute('dataurl');
             document.getElementById(`text-${i}`).style.color = 'green'
             
@@ -134,14 +134,15 @@ if( document.getElementsByClassName('ayahs').length>0){
 return(
     <NavBar>
         <div className="container py-3">
-          <div className="one-Surah border rounded p-1 bg-light ">
+          <div className=" one-Surah  rounded p-1  ">
               {SurahDatiles()}
           </div>
             
             <div className="audio-player"  >
                 <ReactAudioPlayer id="player" autoPlay  src=""/>
             </div>
-            <div className="controls" id="controls">
+            <div className="controls d-flex lign-content-center
+    justify-content-center" id="controls">
                 <button id="play" className="">
                     <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
                         fill="black" width="36px" height="36px">

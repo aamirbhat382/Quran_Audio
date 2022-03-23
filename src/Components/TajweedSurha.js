@@ -83,7 +83,8 @@ let SurahList = options()
     return(
         <>
         <NavBar>
-        <div className="container SurhaContainer">
+          <section className="py-3">
+        <div className="container SurhaContainer rounded-1  bg-light">
         <select onChange = {handleChange} className="form-select mb-3" aria-label="Default select example">
             {SurahList.map((element=>{
                 return(<option value={element} key={element}>{element}</option>)
@@ -91,6 +92,7 @@ let SurahList = options()
         </select>
         {SurahDatiles()}
         </div>
+        </section>
         </NavBar>
         
         </>

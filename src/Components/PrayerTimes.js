@@ -71,7 +71,7 @@ function PrayerTimes() {
             <span className="visually-hidden">Loading...</span>
           </div>
         )}
-        <table className="table table-dark table-hover">
+        <table className="table   table-hover rounded-1">
           <thead>
             <tr>
               <th scope="col">Name</th>
