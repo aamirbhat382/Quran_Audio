@@ -33,7 +33,7 @@ Quran Audio fetch's Audio, Arabic Text, English Translation and Urdu Translation
 - Prayer Times
 - Islamic Calendar
 -  Progressive Web App
--  Android App
+-  Android App [Download](https://drive.google.com/file/d/1ZY90lRjkOuW2nl_MLd8dBVj3JL6IgsP1/view?usp=sharing)
 ## Developer
 Quran Audio is website where you can listen Holy Quran online with  Arabic Ayat Text , English Translation and Urdu Translation .
 - Developed by  [Aamir Bhat](https://github.com/aamirbhat382/)
