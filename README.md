@@ -57,11 +57,26 @@ Open your favorite Code Editor
 Start Developing
 
 ```sh
+
+npm  start
+
 npm run start
+
+
+
+
+
+
+
+
+
 ```
 ```sh
 127.0.0.1:3000/
 ```
+
+
+
 
 
 

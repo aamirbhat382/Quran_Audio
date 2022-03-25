@@ -40,16 +40,18 @@ function handleOnClick(id) {
 
 const surhaList =()=>{
 	return (
+    
 		<>
+    
 			{loading && (
-          <div className="spinner-border spinner-center" role="status">
+          <div className="spinner-border text-warning spinner-center" role="status">
 		  <span className="visually-hidden">Loading...</span>
 		</div>
         )}
 			{error && (
-	       	<div className="alert alert-danger" role="alert">
-					  Something went Wrong
-					</div>
+	       	<div className="alert alert-danger w-75 mx-auto" role="alert">
+           Something went Wrong
+         </div>
 	        )}
 			<div className="container py-5">
 		        {data &&

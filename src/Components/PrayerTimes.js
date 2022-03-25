@@ -66,11 +66,16 @@ function PrayerTimes() {
   return (
     <NavBar>
       <div className="container py-5">
-        {loading && (
-          <div className="spinner-border spinner-center" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
+      {loading && (
+          <div className="spinner-border text-warning spinner-center" role="status">
+		  <span className="visually-hidden">Loading...</span>
+		</div>
         )}
+			{error && (
+	       	<div className="alert alert-danger w-75 mx-auto" role="alert">
+           Something went Wrong
+         </div>
+	        )}
         <table className="table   table-hover rounded-1">
           <thead>
             <tr>

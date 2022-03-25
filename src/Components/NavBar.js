@@ -34,15 +34,11 @@ function NavBar({children}) {
       {/* NavBar End */}
       {/* Sidebar */}
       <div
-        className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar offcanvas offcanvas-end-left"
-        id="offcanvasMenu" tabindex="-1" aria-modal="true"  role="dialog" data-bs-dismiss="offcanvas">
+        className="d-flex flex-column flex-shrink-0 p-3 background-dark sidebar offcanvas offcanvas-end-left"
+        id="offcanvasMenu" tabIndex="-1" aria-modal="true"  role="dialog" data-bs-dismiss="offcanvas">
         <div className="offcanvas-header justify-content-end">
-          <button
-            type="button"
-            className="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
+        <i type="button" className=" btn-close-sidebar text-reset bi bi-x-lg" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+         
         </div>
         <a
           href="/"
@@ -53,83 +49,44 @@ function NavBar({children}) {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <NavLink to="/" className="nav-link "  activeClassName="active" aria-current="page">
-            <i class="bi bi-house me-2"></i>
+            <NavLink to="/" className="nav-link "  activeclassname="active" aria-current="page">
+            <i className="bi bi-house me-2"></i>
               Home
             </NavLink>
           </li>
           <li>
-          <NavLink to="/suraha/tajweed" className="nav-link "  activeClassName="active" aria-current="page">
-          <i class="bi bi-book me-2"></i>
+          <NavLink to="/suraha/tajweed" className="nav-link "  activeclassname="active" aria-current="page">
+          <i className="bi bi-book me-2"></i>
               Tajweed
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/prayer" className="nav-link "  activeClassName="active" aria-current="page">
-            <i class="bi bi-clock me-2"></i>
+            <NavLink to="/prayer" className="nav-link "  activeclassname="active" aria-current="page">
+            <i className="bi bi-clock me-2"></i>
               Prayer
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/clander" className="nav-link "  activeClassName="active" aria-current="page">
-            <i class="bi bi-calendar-day me-2"></i>
+            <NavLink to="/clander" className="nav-link "  activeclassname="active" aria-current="page">
+            <i className="bi bi-calendar-day me-2"></i>
               Calendar
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/about" className="nav-link " data-bs-dismiss="offcanvas" activeClassName="active" aria-current="page">
-            <i class="bi bi-file-earmark-person me-2"></i>
-              About
+            <NavLink to="/downloadapp" className="nav-link " activeclassname="active" aria-current="page">
+            <i class="bi bi-arrow-down-circle me-2"></i>
+              Download App
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/developer" className="nav-link " activeclassname="active" aria-current="page">
+            <i class="bi bi-file-code me-2"></i>
+              Developer
             </NavLink>
           </li>
         </ul>
         <hr />
-        <div className="dropdown">
-          <a
-            href="/"
-            className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
-            id="dropdownUser2"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="https://github.com/mdo.png"
-              alt=""
-              width="32"
-              height="32"
-              className="rounded-circle me-2"
-            />
-            <strong>Aamir Hussain</strong>
-          </a>
-          <ul
-            className="dropdown-menu text-small shadow"
-            aria-labelledby="dropdownUser2"
-          >
-            <li>
-              <a className="dropdown-item" href="/">
-                New project...
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a className="dropdown-item" href="/">
-                Profile
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a className="dropdown-item" href="/">
-                Sign out
-              </a>
-            </li>
-          </ul>
-        </div>
+        <a className="text-light" href="https://github.com/aamirbhat382/Quran_Audio" target='_blank'>GitHub</a>
       </div>
   
     <main>{children}</main>
