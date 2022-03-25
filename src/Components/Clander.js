@@ -127,10 +127,15 @@ const Style = {
       </div>
       <div className="cal-days">
       {loading && (
-          <div className="spinner-border spinner-center" role="status">
+          <div className="spinner-border text-warning spinner-center" role="status">
 		  <span className="visually-hidden">Loading...</span>
 		</div>
         )}
+			{error && (
+	       	<div className="alert alert-danger w-75 mx-auto" role="alert">
+           Something went Wrong
+         </div>
+	        )}
       {data && parse(WeekDayStart(data))}
         
         {data && data.map((element=>{

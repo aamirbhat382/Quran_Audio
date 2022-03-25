@@ -43,7 +43,16 @@ html{
     background: #060b1b;
     color: #7081b9;
   }
-  
+  .btn-close-sidebar {
+    border: 0;
+    border-radius: 0.25rem;
+    /* opacity: .5; */
+    background: #fff;
+    padding: 4px;
+}
+.btn-close-sidebar:hover {
+  opacity: .5;
+}
 
   .background-dark{
     background-color: #060b1b;
