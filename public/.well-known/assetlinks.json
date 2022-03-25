@@ -1,7 +1,15 @@
 
 [{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "quran_audio.twa",
-               "sha256_cert_fingerprints": ["25:37:16:C9:3E:DE:C1:B2:4B:95:2E:8E:F2:E8:5B:29:DF:6A:53:39:DC:4E:04:73:16:03:0A:3B:75:ED:AA:18"] }
-}
+
+   "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "quran_audio.twa",
+                     "sha256_cert_fingerprints": ["25:37:16:C9:3E:DE:C1:B2:4B:95:2E:8E:F2:E8:5B:29:DF:6A:53:39:DC:4E:04:73:16:03:0A:3B:75:ED:AA:18"] }
+      }
 ]
+
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "quran_audio.twa",
+                     "sha256_cert_fingerprints": ["25:37:16:C9:3E:DE:C1:B2:4B:95:2E:8E:F2:E8:5B:29:DF:6A:53:39:DC:4E:04:73:16:03:0A:3B:75:ED:AA:18"] }
+      }
+]
+
