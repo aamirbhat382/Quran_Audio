@@ -4,14 +4,11 @@ import { SettingsContext } from "../SettingsContext";
 
 function Test() {
   const { settings, setSettings } = useContext(SettingsContext);
-  const [values, setValues] = useState({
-    reciters: null,
-    loading: false,
-    error: "",
-  });
-  const { reciters, loading, error } = values;
+  const [data, setData] = useState(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
 
-  const preload = () => {
+  useEffect(() => {
     fetch(`https://api.alquran.cloud/v1/edition?format=audio&type=versebyverse`)
       .then((response) => {
         if (!response.ok) {
@@ -24,22 +21,23 @@ function Test() {
         return response.json();
       })
       .then((data) => {
-        setValues({ ...values, reciters: data.data });
+        setData(data.data);
+        setError(null);
       })
       .catch((err) => {
-        setValues({ ...values, error: err, reciters:null, loading:false});
+        setError(err.message);
+        setData(null);
       })
       .finally(() => {
-        setValues({ ...values, loading: false });
+        setLoading(false);
       });
-  };
-  useEffect(() => {
-    preload();
   },[]);
+  // console.log(data)
   const handleChangeReciters = (name) => (event) => {
+    console.log(name.toString())
     const value = event.target.value;
     const _settings = {...settings};
-    _settings.reciter = value;
+    _settings[name.toString()] = value;
     setSettings(_settings)
   };
 
@@ -55,11 +53,10 @@ function Test() {
             className="form-control"
             id="exampleFormControlSelect1"
           >
-            <option defaultValue="ar.alafasy">Alafasy</option>
-            {reciters &&
-              reciters.map((reciter, index) => (
+            <option value="ar.alafasy">Alafasy</option>
+            {data &&
+              data.map((reciter, index) => (
                 <option key={index} value={reciter.identifier}>
-                  {" "}
                   {reciter.englishName}
                 </option>
               ))}

@@ -74,13 +74,13 @@ function NavBar({children}) {
           </li>
           <li className="nav-item">
             <NavLink to="/downloadapp" className="nav-link " activeclassname="active" aria-current="page">
-            <i class="bi bi-arrow-down-circle me-2"></i>
+            <i className="bi bi-arrow-down-circle me-2"></i>
               Download App
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink to="/developer" className="nav-link " activeclassname="active" aria-current="page">
-            <i class="bi bi-file-code me-2"></i>
+            <i className="bi bi-file-code me-2"></i>
               Developer
             </NavLink>
           </li>
