@@ -1,9 +1,11 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext, } from "react";
 import { useNavigate } from "react-router-dom";
 import NavBar from './NavBar'
+import { SettingsContext } from "../SettingsContext";
 
 
 function Home() {
+const { settings, setSettings } = useContext(SettingsContext);
 const navigate = useNavigate();
 const [data, setData] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -11,6 +13,7 @@ const [error, setError] = useState(null);
 
  
 useEffect(() => {
+  
     fetch(`https://api.alquran.cloud/v1/surah`)
       .then((response) => {
         if (!response.ok) {
@@ -33,6 +36,17 @@ useEffect(() => {
         setLoading(false);
       });
   }, []);
+  useEffect(()=>{
+    if (!settings) {
+    const _settings = {...settings};
+    _settings.reciter ="ar.alafasy";
+    _settings.madhab ="Hanafi";
+    _settings.CalculationMethod = 'Karachi'
+    _settings.Translation = 'en.asad'
+    setSettings(_settings)
+    }
+  },[settings])
+  
 function handleOnClick(id) {
 		// console.log("Clicked")
      navigate('/suraha',{ state: id })

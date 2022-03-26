@@ -1,3 +1,4 @@
+import React , {useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,11 +13,24 @@ import PrayerTimes from './Components/PrayerTimes'
 import Hadith from  './Components/Hadith'
 import Download from './Components/Download'
 import Test from "./Components/Test";
+import { SettingsContext } from "./SettingsContext";
+import { getSettings, storeSettings } from "./helper";
 
 
 
 function AllRoutes() {
+  const [settings, setSettings] = useState({});
+  useEffect(() => {
+    getSettings().then((settings) => {
+      setSettings(JSON.parse(settings));
+    });
+  }, []);
+
+  useEffect(() => {
+    storeSettings(settings);
+  }, [settings]);
   return (
+    <SettingsContext.Provider value={{ settings, setSettings }}>
     <Router>
       <Routes>
       <Route path="/test" element={<Test/>}/>
@@ -29,6 +43,7 @@ function AllRoutes() {
         <Route path="downloadapp" element={<Download/>}/>
       </Routes>
     </Router>
+    </SettingsContext.Provider>
   );
 }
 
