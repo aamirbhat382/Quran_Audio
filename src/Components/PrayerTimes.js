@@ -43,7 +43,8 @@ function PrayerTimes() {
       function showPosition(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        let URL = `https://api.aladhan.com/timings/${todaysDate}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=1`;
+        const method =  JSON.parse(localStorage.getItem('settings')).CalculationMethod
+        let URL = `https://api.aladhan.com/timings/${todaysDate}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=${method}`;
         loadData(URL);
       }
     }

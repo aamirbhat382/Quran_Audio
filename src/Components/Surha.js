@@ -1,10 +1,11 @@
 import {useLocation} from 'react-router-dom';
-import { useState,useEffect } from "react";
+import { useState,useEffect ,useContext} from "react";
 import ReactAudioPlayer from 'react-audio-player';
 import NavBar from './NavBar'
-
+import {SettingsContext } from '../SettingsContext'
 
 const Surah = ()=> {
+const { settings, setSettings } = useContext(SettingsContext);
 const location = useLocation();
 const [data, setData] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -15,8 +16,8 @@ let limit = 4
 
 
 useEffect(() => {
-    
-     fetch(`https://api.alquran.cloud/v1/surah/${location.state}/editions/ar.alafasy,en.asad,ur.jalandhry`)
+    const reciter =  JSON.parse(localStorage.getItem('settings')).reciter
+     fetch(`https://api.alquran.cloud/v1/surah/${location.state}/editions/${reciter},en.asad,ur.jalandhry`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(

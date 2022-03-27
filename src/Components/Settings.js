@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import NavBar from "./NavBar";
 import { SettingsContext } from "../SettingsContext";
 
-function Test() {
+function  Settings() {
   const { settings, setSettings } = useContext(SettingsContext);
   const [data, setData] = useState(null);
 const [loading, setLoading] = useState(true);
@@ -108,4 +108,4 @@ const [error, setError] = useState(null);
   );
 }
 
-export default Test;
+export default Settings;
