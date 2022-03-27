@@ -41,7 +41,7 @@ useEffect(() => {
     const _settings = {...settings};
     _settings.reciter ="ar.alafasy";
     _settings.madhab ="Hanafi";
-    _settings.CalculationMethod = 'Karachi'
+    _settings.CalculationMethod = 5
     _settings.Translation = 'en.asad'
     setSettings(_settings)
     }

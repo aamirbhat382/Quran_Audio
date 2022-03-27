@@ -15,6 +15,7 @@ import Download from './Components/Download'
 import Test from "./Components/Test";
 import { SettingsContext } from "./SettingsContext";
 import { getSettings, storeSettings } from "./helper";
+import Settings from "./Components/Settings";
 
 
 
@@ -41,6 +42,7 @@ function AllRoutes() {
         <Route path="clander" element={<Clander/>}/>
         <Route path="hadith" element={<Hadith/>}/>
         <Route path="downloadapp" element={<Download/>}/>
+        <Route path="settings" element={<Settings/>}/>
       </Routes>
     </Router>
     </SettingsContext.Provider>

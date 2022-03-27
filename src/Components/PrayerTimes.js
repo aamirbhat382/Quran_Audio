@@ -1,97 +1,108 @@
-import adhan from 'adhan'
-import moment  from "moment";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 
 function PrayerTimes() {
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [status, setStatus] = useState(null);
-  const showTimes = ()=>{
-    const date = new Date();
-    let coordinates = new adhan.Coordinates(latitude,longitude )
-    let params = adhan.CalculationMethod.Karachi()
-    params.madhab = adhan.Madhab.Hanafi;
-    const prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
-    const fajrTime = moment(prayerTimes.fajr).format('h:mm A');
-    const sunriseTime = moment(prayerTimes.sunrise).format('h:mm A');
-    const dhuhrTime = moment(prayerTimes.dhuhr).format('h:mm A');
-    const asrTime = moment(prayerTimes.asr).format('h:mm A');
-    const maghribTime = moment(prayerTimes.maghrib).format('h:mm A');
-    const ishaTime = moment(prayerTimes.isha).format('h:mm A');
-    const current = prayerTimes.currentPrayer();
-    const next = prayerTimes.nextPrayer();
-    const nextPrayerTime = prayerTimes.timeForPrayer(next);
-    console.log(nextPrayerTime)
-    return (
-        <div className="container">
-          <h1 className='text-light text-center'>Next Prayer <span className="badge  bg-primary">{next}</span></h1>
-         
-          <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Fajr</th>
-      <td>{fajrTime}</td>
-    </tr>
-    <tr>
-      <th scope="row">Sun rise</th>
-      <td>{sunriseTime}</td>
-    </tr>
-    <tr>
-      <th scope="row">Dhuhr</th>
-      <td>{dhuhrTime}</td>
-    </tr>
-    <tr>
-      <th scope="row">Asr</th>
-      <td>{asrTime}</td>
-    </tr>
-    <tr>
-      <th scope="row">Maghrib</th>
-      <td>{maghribTime}</td>
-    </tr>
-    <tr>
-      <th scope="row">Isha</th>
-      <td>{ishaTime}</td>
-    </tr>
-  </tbody>
-</table>
-        </div>
-    )
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  let todaysDate = new Date().getDate();
+  let month = new Date().getMonth() + 1;
+  let year = new Date().getFullYear();
+
+  const loadData = (url) => {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            `This is an HTTP error: The status is ${response.status}`
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
+
+        setData(data.data);
+        setError(null);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setData(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    if (window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(showPosition);
+
+      function showPosition(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        const method =  JSON.parse(localStorage.getItem('settings')).CalculationMethod
+        let URL = `https://api.aladhan.com/timings/${todaysDate}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=${method}`;
+        loadData(URL);
+      }
+    }
+  }, []);
+  function ConvertTime(time) {
+    // Check correct time format and split into components
+    time = time
+      .toString()
+      .match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+    if (time.length > 1) {
+      // If time format correct
+      time = time.slice(1); // Remove full string match value
+      time[5] = +time[0] < 12 ? "AM" : "PM"; // Set AM/PM
+      time[0] = +time[0] % 12 || 12; // Adjust hours
+    }
+    return time.join(""); // return adjusted time or original string
   }
-  
-  if ('geolocation' in navigator) {
-    window.navigator.geolocation.getCurrentPosition(showPosition);
-    function showPosition(position) {
-      setLatitude(position.coords.latitude);
-      setLongitude(position.coords.longitude);
-      setStatus("locationAvailable")
-    }
-    }else{
-      setStatus("locationNotAvailable")
-    }
-  
-  
+
   return (
-    <>
     <NavBar>
-    <div className='container py-3'>
-      {status == 'locationAvailable' && 
-      showTimes()
-    }
-    {status == 'locationNotAvailable' && 
-      showTimes()
-    }
-    </div>
-   </NavBar>
-   </>
+      <div className="container py-5">
+      {loading && (
+          <div className="spinner-border text-warning spinner-center" role="status">
+		  <span className="visually-hidden">Loading...</span>
+		</div>
+        )}
+			{error && (
+	       	<div className="alert alert-danger w-75 mx-auto" role="alert">
+           Something went Wrong
+         </div>
+	        )}
+        <table className="table   table-hover rounded-1">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Time</th>
+              <th scope="col">Date</th>
+              <th scope="col">Timezone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data &&
+              Object.entries(data.timings).map(([key, value]) => {
+                return (
+                  <tr key={key}>
+                    <th scope="row">{key}</th>
+                    <td>{ConvertTime(value)}</td>
+                    <td>{data.date.readable}</td>
+                    <td>{data.meta.timezone}</td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
+      </div>
+    </NavBar>
   );
- 
 }
 
 export default PrayerTimes;

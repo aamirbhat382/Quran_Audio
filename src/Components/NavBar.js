@@ -73,6 +73,12 @@ function NavBar({children}) {
             </NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/settings" className="nav-link "  activeclassname="active" aria-current="page">
+            <i className="bi bi-gear me-2"></i>
+              Settings
+            </NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/downloadapp" className="nav-link " activeclassname="active" aria-current="page">
             <i className="bi bi-arrow-down-circle me-2"></i>
               Download App
