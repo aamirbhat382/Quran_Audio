@@ -49,7 +49,8 @@ useEffect(() => {
   
 function handleOnClick(id) {
 		// console.log("Clicked")
-     navigate('/suraha',{ state: id })
+     navigate(`/suraha/${id}`,{ state: id }, {replace: true})
+    
   }
 
 const surhaList =()=>{

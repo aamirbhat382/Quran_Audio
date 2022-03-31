@@ -36,7 +36,7 @@ function AllRoutes() {
       <Routes>
       <Route path="/test" element={<Test/>}/>
         <Route path="/" element={<Home/>}/>
-        <Route path="suraha" element={<Surah/>}/>
+        <Route path="suraha/:number" element={<Surah/>}/>
         <Route path="suraha/tajweed" element={<TajweedSurha/>}/>
         <Route path="prayer" element={<PrayerTimes/>}/>
         <Route path="clander" element={<Clander/>}/>
