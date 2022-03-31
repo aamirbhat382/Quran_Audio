@@ -1,4 +1,4 @@
-import { useLocation,useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import NavBar from "./NavBar";
@@ -120,6 +120,7 @@ const Surah = () => {
     // console.log(player)
     player.src = ayahsArray[i].getAttribute("dataurl");
     document.getElementById(`text-${i}`).style.color = "green";
+  
 
     player.addEventListener("ended", () => {
       document.getElementById(`text-${i}`).style.color = "#7081b9";
@@ -146,6 +147,7 @@ const Surah = () => {
     const controls = document.getElementById("controls");
     if (audioTag.paused) {
       audioTag.play();
+      
       controls.innerHTML = `<button id="pause">
         <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
             fill="white" width="36px" height="36px">
@@ -175,15 +177,26 @@ const Surah = () => {
       </button>`;
     }
   };
-//   console.log(location.state)
+  //   console.log(location.state)
   const handleNext = () => {
-    if(location.state == 114){
-        return;
+    if (location.state == 114) {
+      return;
     }
-    const _state = location.state + 1
-    console.log(_state)
-    console.log(location.state)
-    navigate('/suraha',{ state: _state})
+    const audioTag = document.querySelector("audio");
+    audioTag.pause();
+    const _state = location.state + 1;
+    navigate(`/suraha/${_state}`, { state: _state }, { replace: true });
+    window.location.reload();
+  };
+  const handleBack = () => {
+    if (location.state == 1) {
+      return;
+    }
+    const audioTag = document.querySelector("audio");
+    audioTag.pause();
+    const _state = location.state - 1;
+    navigate(`/suraha/${_state}`, { state: _state }, { replace: true });
+    window.location.reload();
   };
 
   return (
@@ -198,7 +211,7 @@ const Surah = () => {
           className="controls d-flex align-content-center
             justify-content-center"
         >
-          <button>
+          <button onClick={handleBack}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
