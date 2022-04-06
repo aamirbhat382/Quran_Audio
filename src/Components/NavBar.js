@@ -27,7 +27,7 @@ function NavBar({children}) {
             </i>
           </a>
           <Link className="navbar-brand text-capitalize" to="#">
-            {currentPathName}
+            Quran Audio
           </Link>
         </div>
       </nav>
