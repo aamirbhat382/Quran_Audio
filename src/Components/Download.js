@@ -12,7 +12,7 @@ function Download() {
       <a href='/' target="_blank"  className='text-center'>
       <img src={amazon}></img>
     </a> 
-    <a href='/' target="_blank"  className='text-light'>Download from G-Drive</a>
+    <a href='https://drive.google.com/file/d/1Oe5KXZG8J2a49r3X9ulCCZ6f278FqUnp/view?usp=sharing' target="_blank"  className='text-light'>Download from G-Drive</a>
         
     </div>
     </main>
