@@ -183,6 +183,7 @@ const Surah = () => {
       return;
     }
     const audioTag = document.querySelector("audio");
+    // console.log(audioTag)
     audioTag.pause();
     const _state = location.state + 1;
     navigate(`/suraha/${_state}`, { state: _state }, { replace: true });

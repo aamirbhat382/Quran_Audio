@@ -16,6 +16,7 @@ import Test from "./Components/Test";
 import { SettingsContext } from "./SettingsContext";
 import { getSettings, storeSettings } from "./helper";
 import Settings from "./Components/Settings";
+import SurhaAudio from "./Components/SurhaAudio";
 
 
 
@@ -39,6 +40,8 @@ function AllRoutes() {
         <Route path="suraha/:number" element={<Surah/>}/>
         <Route path="suraha/tajweed" element={<TajweedSurha/>}/>
         <Route path="prayer" element={<PrayerTimes/>}/>
+        <Route path="surha-audio" element={<SurhaAudio/>}/>
+
         <Route path="clander" element={<Clander/>}/>
         <Route path="hadith" element={<Hadith/>}/>
         <Route path="downloadapp" element={<Download/>}/>
@@ -51,3 +54,4 @@ function AllRoutes() {
 
 
 export default AllRoutes;
+// {`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${element.number}.mp3`}

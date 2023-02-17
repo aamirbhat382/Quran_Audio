@@ -54,6 +54,12 @@ function NavBar({children}) {
               Home
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink to="/surha-audio" className="nav-link "  activeclassname="active" aria-current="page">
+            <i className="bi bi-music-note-beamed me-2"></i>
+              Audio
+            </NavLink>
+          </li>
           <li>
           <NavLink to="/suraha/tajweed" className="nav-link "  activeclassname="active" aria-current="page">
           <i className="bi bi-book me-2"></i>
