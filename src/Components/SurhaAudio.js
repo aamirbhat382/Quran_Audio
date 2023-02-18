@@ -42,7 +42,7 @@ function SurhaAudio() {
         setLoading(true);
         let player = document.getElementById("player");
         // console.log(player)
-        player.src = `https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${id}.mp3`;
+        player.src = `https://audio-stream.vercel.app/audio/${id}`;
        
     }
 const audioTag = document.querySelector('audio')
@@ -52,7 +52,13 @@ const fillDuration = document.querySelector('.fill-duration')
 
 const startTimer = () => {
     setLoading(false);
-    const duration = parseInt(audioTag.duration)
+    let duration = parseInt(audioTag.duration)
+    if(duration==NaN){
+        duration = 60*60;
+    }
+
+
+    console.log(duration)
     const strTime = (currentTime) => {
         let hour = undefined
         let minutes = undefined
