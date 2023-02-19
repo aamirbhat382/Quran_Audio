@@ -17,7 +17,8 @@ import { SettingsContext } from "./SettingsContext";
 import { getSettings, storeSettings } from "./helper";
 import Settings from "./Components/Settings";
 import SurhaAudio from "./Components/SurhaAudio";
-import AudioPlayer from "./Components/AudioPlayer"
+import Developer from "./Components/Developer";
+
 
 
 
@@ -47,7 +48,7 @@ function AllRoutes() {
         <Route path="hadith" element={<Hadith/>}/>
         <Route path="downloadapp" element={<Download/>}/>
         <Route path="settings" element={<Settings/>}/>
-        <Route path="audio" element={<AudioPlayer/>}/>
+        <Route path="developer" element={<Developer/>}/>
       </Routes>
     </Router>
     </SettingsContext.Provider>

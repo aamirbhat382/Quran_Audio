@@ -359,3 +359,20 @@ a{
 .currentAndtotal{
   margin: 0rem 0.3rem;
 }
+
+.fill-duration::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  /* left: calc(50% - -115px); */
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e28853;
+  right: 1px;
+  cursor: pointer;
+}
+.profile{
+  border-radius: 50%;
+  width: 25%;
+}

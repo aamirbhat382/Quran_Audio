@@ -53,15 +53,17 @@ const SurahDatiles = ()=>{
     {data && data.ayahs.map((element,index)=>{
         // console.log(element.audio)
         return(
-            
+            <>
+            <ul>
         <div className="py-3 text-center" key={`key_${index}`}>
             
             <div className="" id={`ayah${index + 1}`}>
-            <h1 className=" Quran-ayah " dangerouslySetInnerHTML={{__html:`<span> ۞ </span>  ${parseTajweed.parse(element.text)}`}} id={`text-${index}`}></h1>
+            <h1 className=" Quran-ayah py-3 lh-lg" dangerouslySetInnerHTML={{__html:`<span> ۞ </span>  ${parseTajweed.parse(element.text)}`}} id={`text-${index}`}></h1>
             </div>
             
         </div>
-        
+        </ul>
+        </>
         )
     })
 

@@ -42,7 +42,21 @@ function SurhaAudio() {
         setLoading(true);
         let player = document.getElementById("player");
         // console.log(player)
-        player.src = `https://audio-stream.vercel.app/audio/${id}`;
+        player.src = `https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${id}.mp3`;
+        let controls = document.getElementById("controls")
+        controls.innerHTML = `<button id="pause">
+        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
+            fill="white" width="36px" height="36px">
+            <g>
+                <rect fill="none" height="24" width="24" />
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z" />
+                </g>
+            </g>
+        </svg></button>`;
        
     }
 const audioTag = document.querySelector('audio')
@@ -53,12 +67,12 @@ const fillDuration = document.querySelector('.fill-duration')
 const startTimer = () => {
     setLoading(false);
     let duration = parseInt(audioTag.duration)
-    if(duration==NaN){
-        duration = 60*60;
-    }
+    // if(duration==NaN){
+    //     duration = 60*60;
+    // }
 
 
-    console.log(duration)
+    // console.log(duration)
     const strTime = (currentTime) => {
         let hour = undefined
         let minutes = undefined
@@ -92,33 +106,50 @@ const startTimer = () => {
 
 if(audioTag){
     audioTag.addEventListener('loadeddata', startTimer)
-    let controls = document.getElementById("controls")
-
-
-    const pause = document.getElementById("pause")
-    
-    
-    pause.addEventListener('click', () => {
-    
-        audioTag.pause()
-    
-    })
-    
-    const play = document.getElementById("play")
-    
-    play.addEventListener('click', () => {
-        audioTag.play()
-    
-    
-    })
+   
 }
+const handlePlayPause = () => {
+    const audioTag = document.querySelector("audio");
+    const controls = document.getElementById("controls");
+    if (audioTag.paused) {
+      audioTag.play();
+      
+      controls.innerHTML = `<button id="pause">
+        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
+            fill="white" width="36px" height="36px">
+            <g>
+                <rect fill="none" height="24" width="24" />
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z" />
+                </g>
+            </g>
+        </svg></button>`;
+    } else {
+      audioTag.pause();
+      controls.innerHTML = `<button id="play" className="">
+        <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
+           fill="white" width="36px" height="36px">
+           <g>
+               <rect fill="none" height="24" width="24" />
+           </g>
+           <g>
+               <path
+                   d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,14.67V9.33c0-0.79,0.88-1.27,1.54-0.84 l4.15,2.67c0.61,0.39,0.61,1.29,0,1.68l-4.15,2.67C10.38,15.94,9.5,15.46,9.5,14.67z" />
+           </g>
+       </svg>
+      </button>`;
+    }
+  };
 
 
 
     const surhaList = () => {
         return (
 
-            <>
+           <>
 
                 {loading && (
                     <div className="spinner-border text-warning spinner-center " role="status">
@@ -157,7 +188,7 @@ if(audioTag){
                         })
                     }
                 </div>
-            </>
+                </>
         )
     }
 
@@ -170,7 +201,7 @@ if(audioTag){
                 {surhaList()}
                 <div className="audio-player" id="mainAudioPlayer">
                     <div className="fill-duration" style={{ width: 0 }}></div>
-                    {/* <audio id="player" autoPlay></audio> */}
+                   
                     <ReactAudioPlayer id="player" autoPlay src="" />
                     <div className="fill-duration"></div>
                     <div className="duration">
@@ -180,8 +211,8 @@ if(audioTag){
                     </div>
 
 
-                    <div className="controls" id="controls">
-                        <button id="play" className="">
+                    <div className="controls" id="controls" onClick={handlePlayPause}>
+                        <button  className="">
                             <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
                                 fill="black" width="36px" height="36px">
                                 <g>
@@ -192,19 +223,7 @@ if(audioTag){
                                         d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,14.67V9.33c0-0.79,0.88-1.27,1.54-0.84 l4.15,2.67c0.61,0.39,0.61,1.29,0,1.68l-4.15,2.67C10.38,15.94,9.5,15.46,9.5,14.67z" />
                                 </g>
                             </svg></button>
-                        <button id="pause">
-                            <svg xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24" viewBox="0 0 24 24"
-                                fill="black" width="36px" height="36px">
-                                <g>
-                                    <rect fill="none" height="24" width="24" />
-                                </g>
-                                <g>
-                                    <g>
-                                        <path
-                                            d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z" />
-                                    </g>
-                                </g>
-                            </svg></button>
+                        
                     </div>
                 </div>
 
