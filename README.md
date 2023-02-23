@@ -9,7 +9,7 @@ Quran Audio fetch's Audio, Arabic Text, English Translation and Urdu Translation
 - All  Surah 
 - Surah Number
 - Totel Ayat's 
-- Surah Ayat by Ayat
+- Listen Surah Ayat by Ayat
 - Surah Audio and Text
 - Ayat Number
 - Ruku Number

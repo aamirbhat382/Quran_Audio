@@ -18,6 +18,7 @@ import { getSettings, storeSettings } from "./helper";
 import Settings from "./Components/Settings";
 import SurhaAudio from "./Components/SurhaAudio";
 import Developer from "./Components/Developer";
+import IndexPage from "./Components/IndexPage";
 
 
 
@@ -38,7 +39,9 @@ function AllRoutes() {
     <Router>
       <Routes>
       <Route path="/test" element={<Test/>}/>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<IndexPage/>}/>
+        <Route path="suraha" element={<Home/>}/>
+        <Route path="index-page" element={<IndexPage/>}/>
         <Route path="suraha/:number" element={<Surah/>}/>
         <Route path="suraha/tajweed" element={<TajweedSurha/>}/>
         <Route path="prayer" element={<PrayerTimes/>}/>

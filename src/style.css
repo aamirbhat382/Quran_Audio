@@ -104,3 +104,14 @@ tajweed.madda_normal {
 tajweed.idgh_mus:hover {
     background-color: #D7D7D7;
 }
+.bg-dark-black{
+    background-color: #060b1b;
+}
+
+.box-chamk{
+    box-shadow: 6px 6px 10px 0px #7081b9;
+}
+.box-chamk:hover{
+    box-shadow: inset -5px -2px 19px 6px #7081b9;
+    transform: scale3d(1.5, 1.5, 1.5);
+}

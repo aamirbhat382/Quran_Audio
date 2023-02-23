@@ -205,7 +205,7 @@ const Surah = () => {
       <div className="container py-3">
         <div className=" one-Surah  rounded p-1  ">{SurahDatiles()}</div>
 
-        <div className="audio-player">
+        <div className="audio-player d-none" >
           <ReactAudioPlayer id="player" autoPlay src="" />
         </div>
         <div
