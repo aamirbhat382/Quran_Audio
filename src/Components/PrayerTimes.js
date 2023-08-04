@@ -11,9 +11,11 @@ function PrayerTimes() {
   let month = new Date().getMonth() + 1;
   let year = new Date().getFullYear();
 
-  const loadData = (url) => {
-    fetch(url)
+  const loadData =  (url) => {
+    // console.log(url)
+   fetch(url)
       .then((response) => {
+        console.log(response)
         if (!response.ok) {
           throw new Error(
             `This is an HTTP error: The status is ${response.status}`
@@ -22,12 +24,13 @@ function PrayerTimes() {
         return response.json();
       })
       .then((data) => {
-        console.log(data.data);
+        // console.log(data.data);
 
         setData(data.data);
         setError(null);
       })
       .catch((err) => {
+        console.log(err)
         setError(err.message);
         setData(null);
       })
@@ -45,10 +48,33 @@ function PrayerTimes() {
         const longitude = position.coords.longitude;
         const method =  JSON.parse(localStorage.getItem('settings')).CalculationMethod
         let URL = `https://api.aladhan.com/timings/${todaysDate}-${month}-${year}?latitude=${latitude}&longitude=${longitude}&method=${method}`;
-        loadData(URL);
+        fetch(URL)
+        .then((response) => {
+          console.log(response)
+          if (!response.ok) {
+            throw new Error(
+              `This is an HTTP error: The status is ${response.status}`
+            );
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // console.log(data.data);
+  
+          setData(data.data);
+          setError(null);
+        })
+        .catch((err) => {
+          console.log(err)
+          setError(err.message);
+          setData(null);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
       }
     }
-  }, []);
+  });
   function ConvertTime(time) {
     // Check correct time format and split into components
     time = time

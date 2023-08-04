@@ -1,7 +1,7 @@
 {
   "short_name": "Quran Audio",
-  "name": "Quran Audio ",
-  "description": "Read | Listen |  Tajweed | Islamic Dates | Prayer Times  ",
+  "name": "Quran Audio",
+  "description": "Read | Listen |  Tajweed | Islamic Dates | Prayer Times",
   "icons": [
     {
       "src": "./images/icon-48x48.png",

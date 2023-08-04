@@ -84,13 +84,13 @@ const Surah = () => {
                   </p>
                 </div>
                 <div className="card-body card-body-bg" id={`ayah${index + 1}`}>
-                  <h5 className="card-title Quran-ayah " id={`text-${index}`}>
+                  <h5 className="card-title Quran-ayah-arabic  Quran-ayah " id={`text-${index}`}>
                     {element.text}
                   </h5>
-                  <p className="card-title Quran-ayah ">
+                  <p className="card-title Quran-ayah  Quran-ayah-english ">
                     {data[0].en_translation.ayahs[index].text}
                   </p>
-                  <p className="card-title Quran-ayah ">
+                  <p className="card-title Quran-ayah Quran-ayah-urdu ">
                     {data[0].ur_translation.ayahs[index].text}
                   </p>
 

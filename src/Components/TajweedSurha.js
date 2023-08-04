@@ -58,7 +58,7 @@ const SurahDatiles = ()=>{
         <div className="py-3 text-center" key={`key_${index}`}>
             
             <div className="" id={`ayah${index + 1}`}>
-            <h1 className=" Quran-ayah py-3 lh-lg" dangerouslySetInnerHTML={{__html:`<span> ۞ </span>  ${parseTajweed.parse(element.text)}`}} id={`text-${index}`}></h1>
+            <h1 className=" Quran-ayah-tajweeed py-3 lh-lg" dangerouslySetInnerHTML={{__html:`<span> ۞ </span>  ${parseTajweed.parse(element.text)}`}} id={`text-${index}`}></h1>
             </div>
             
         </div>

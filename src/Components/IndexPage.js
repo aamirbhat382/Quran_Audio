@@ -11,7 +11,7 @@ const IndexPage = () => {
           <a href="/surha-audio" className="col-sm-4  py-3 bg-dark-black rounded my-2  mx-1 text-light text-center box-chamk">
             <h6 className="ul">Listen Surah </h6>
            
-            <i className="bi bi-music-note-beamed me-2"></i>
+            <i className="bi bi-music-note-list me-2"></i>
           </a>
           <a href="/suraha/tajweed" className="col-sm-4  py-3 bg-dark-black rounded my-2  mx-1  text-light text-center box-chamk">
             <h6 className="ul">Read Tajweed Quran</h6>

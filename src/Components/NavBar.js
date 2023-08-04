@@ -38,7 +38,7 @@ function NavBar({children}) {
         id="offcanvasMenu" tabIndex="-1" aria-modal="true"  role="dialog" data-bs-dismiss="offcanvas">
         <div className="offcanvas-header justify-content-end">
         <i type="button" className=" btn-close-sidebar text-reset bi bi-x-lg" data-bs-dismiss="offcanvas" aria-label="Close"></i>
-         
+        
         </div>
         <a
           href="/"
@@ -68,7 +68,7 @@ function NavBar({children}) {
           </li>
           <li>
           <NavLink to="/suraha/tajweed" className="nav-link "  activeclassname="active" aria-current="page">
-          <i className="bi bi-book me-2"></i>
+          <i className="bi bi-book-half me-2"></i>
               Tajweed
             </NavLink>
           </li>

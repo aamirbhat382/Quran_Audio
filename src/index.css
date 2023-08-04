@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+@import url('./font.css');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -125,15 +126,38 @@ html{
     margin-bottom: 9px;
   }
 
+ .Quran-ayah{
+  color: #4b5f91;
+ }
  
-  .Quran-ayah{
-    font-family: 'Amiri', serif;
-    font-weight:600;
+  .Quran-ayah-arabic{
+    line-height: normal;
+    font-family: UthmanicHafs;
+    font-size: 1.75rem;
+}
+.Quran-ayah-urdu{
+  line-height: normal;
+    font-family: MehrNastaliq;
+    font-size: 1.75rem;
+    color: #e28853;
+}
+.Quran-ayah-english{
+  line-height: normal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.75rem;
+    color: #e28853;
+}
+.Quran-ayah-tajweeed{
+  line-height: normal;
+    font-family: UthmanicHafs;
+    font-size: 3.25rem;
+    color: #e28853;
 }
 .Quran-surha{
-    /*color: #e7adff;*/
- font-family: 'Amiri', serif;
-    font-weight:600;
+  line-height: normal;
+    font-family: surahnames;
+    font-size: 1.75rem;
+    line-height: 1.3540000916;
 }
 .surhaEnglishName{
     font-weight: 500;
@@ -375,5 +399,23 @@ a{
 .profile{
   border-radius: 50%;
   width: 25%;
+}
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page img{
+  width:50%;
+}
+@media (min-width: 720px) {
+  .page img{
+    width:30%;
+  }
+}
+@media (min-width: 1024px) {
+  .page img{
+    width:25%;
+  }
 }
 

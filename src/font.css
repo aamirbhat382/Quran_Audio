@@ -1,0 +1,81 @@
+/*Fonts for rendering different Mushaf scripts*/
+@font-face {
+  font-family: "IndoPak";
+  src: local("AlQuran IndoPak by QuranWBW"),
+    url("https://quran.com/fonts/quran/hafs/nastaleeq/indopak/indopak-nastaleeq-waqf-lazim-v4.2.1.woff2")
+      format("woff2"),
+    url("https://quran.com/fonts/quran/hafs/nastaleeq/indopak/indopak-nastaleeq-waqf-lazim-v4.2.1.woff")
+      format("woff"),
+    url("https://quran.com/fonts/quran/hafs/nastaleeq/indopak/indopak-nastaleeq-waqf-lazim-v4.2.1.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "UthmanicHafs";
+  src: local("KFGQPC HAFS Uthmanic Script"),
+    url("https://quran.com/fonts/quran/hafs/uthmanic_hafs/UthmanicHafs1Ver18.woff2")
+      format("woff2"),
+    url("https://quran.com/fonts/quran/hafs/uthmanic_hafs/UthmanicHafs1Ver18.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "surahnames";
+  src: url("https://quran.com/fonts/quran/surah-names/v1/sura_names.woff2"),
+    url("https://quran.com/fonts/quran/quran/surah-names/v1/sura_names.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/*Language specific fonts*/
+@font-face {
+  font-family: "divehi";
+  src: local("Dhivehi Akuru"),
+    url("https://quran.com/fonts/lang/dhivehi/dhivehi/DhivehiAkuru.woff2"),
+    url("https://quran.com/fonts/lang/dhivehi/dhivehi/DhivehiAkuru.woff") format("woff"),
+    url("https://quran.com/fonts/lang/dhivehi/dhivehi/DhivehiAkuru.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoNastaliq";
+  src: local("Noto Naskh Arabic"), local("Nafees Regular"),
+    url("https://quran.com/fonts/lang/arabic/NotoNaskhArabic-Regular.woff2"),
+    url("https://quran.com/fonts/lang/arabic/NotoNaskhArabic-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MehrNastaliq";
+  src: local("Mehr Nastaliq Web"), url("https://quran.com/fonts/lang/urdu/MehrNastaliqWeb.woff2"),
+    url("https://quran.com/fonts/lang/urdu/MehrNastaliqWeb.woff") format("woff"),
+    url("https://quran.com/fonts/lang/urdu/MehrNastaliqWeb.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U600-6FF;
+}
+@font-face {
+  font-family: "NotoSerifBengali";
+  src: local("Noto Serif Bengali"),
+    url("https://quran.com/fonts/lang/bengali/NotoSerifBengali-Regular.woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "DroidArabicNaskh";
+  src: local("Droid Arabic Naskh"),
+    url("https://quran.com/fonts/lang/kurdish/droid-naskh-regular.woff2"),
+    url("https://quran.com/fonts/lang/kurdish/droid-naskh-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "ProximaVara";
+  src: local("Proxima Vara"), url("https://quran.com/fonts/lang/ProximaVara/ProximaVara.woff2");
+  font-weight: 100 900;
+  /* default 400 */
+  font-stretch: 50% 100%;
+  /* default 100% */
+  font-display: swap;
+}
